@@ -1,5 +1,5 @@
 
-# Quotes Management Application
+# ✍️ Quotes Management Application
 A full-stack application utilizing Java Spring Boot for backend, React.js for frontend, and MySQL for relational database management.
 
 ### Prerequisites & Environment Setup
@@ -56,7 +56,7 @@ CREATE TABLE quotes (
 INSERT INTO users (username, name, password) VALUES ('Surendra', 'Surendra Kumar', '1234');  
 INSERT INTO quotes (text, author, user_id) VALUES ('The only way to do great work is to love what you do.', 'Steve Jobs', 1);  
 
-# 🚀 **Getting Started**
+# 🚀 **Getting started**
 
 Permissions  
 Ensure the current user owns the project directory so you don't run into "Permission Denied" errors:  
