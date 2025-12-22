@@ -29,7 +29,7 @@ ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';
 FLUSH PRIVILEGES;  
 EXIT;  
 
-### create database and tables  
+### Create database and tables  
 mysql -u root -p  
 CREATE DATABASE quotes_app;  
 USE quotes_app;  
