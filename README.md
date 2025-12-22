@@ -7,8 +7,7 @@ Before running the application, ensure your system is updated and the required r
 
 #### Install Java & Maven
 sudo apt update  
-sudo apt install -y  
-openjdk-17-jdk maven  
+sudo apt install -y openjdk-17-jdk maven  
 java -version 
 mvn -version 
 
@@ -25,6 +24,7 @@ sudo systemctl enable mysql
 ### Root password setup
 Switch MySQL from "system-login" to "password-login" (setting the password to root) so your Spring Boot app can connect. FLUSH PRIVILEGES saves these changes, and EXIT closes the database prompt  
 
+sudo mysql
 ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'root';  
 FLUSH PRIVILEGES;  
 EXIT;  
