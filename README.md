@@ -8,11 +8,11 @@ Before running the application, ensure your system is updated and the required r
 #### Install Java & Maven
 sudo apt update  
 sudo apt install -y openjdk-17-jdk maven  
-java -version 
-mvn -version 
+java -version  
+mvn -version  
 
 ### Install node js & npm  
-sudo apt install -y nodejs npm  
+sudo apt install -y nodejs npm    
 node -v  
 npm -v  
 
@@ -53,7 +53,7 @@ CREATE TABLE quotes (
 );
 
 -- Insert Initial Data  
-INSERT INTO users (username, name, password) VALUES (test', 'test', 'test');  
+INSERT INTO users (username, name, password) VALUES ('test', 'test', 'test');  
 INSERT INTO quotes (text, author, user_id) VALUES ('The only way to do great work is to love what you do.', 'Steve Jobs', 1);  
 
 # 🚀 **Getting started**
@@ -76,7 +76,7 @@ npm start
 Backend Deployment: Create the JAR file using mvn clean package and run it.  
 Frontend Deployment: Install Nginx, move your build folder to /var/www/html, and restart the Nginx service to host the site.  
 
-sudo apt install nginx  
+sudo apt install -y nginx  
 systemctl start nginx  
 systemctl enable nginx  
 
