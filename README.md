@@ -80,7 +80,7 @@ sudo apt install nginx
 systemctl start nginx  
 systemctl enable nginx  
 
-### Troubleshoot commands    
+### Troubleshoot commands:   
 sudo ufw allow 8080  
 sudo netstat -tulpn | grep 8080  
 sudo systemctl status mysql  
