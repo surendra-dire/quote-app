@@ -53,7 +53,7 @@ CREATE TABLE quotes (
 );
 
 -- Insert Initial Data  
-INSERT INTO users (username, name, password) VALUES ('Surendra', 'Surendra Kumar', '1234');  
+INSERT INTO users (username, name, password) VALUES (test', 'test', 'test');  
 INSERT INTO quotes (text, author, user_id) VALUES ('The only way to do great work is to love what you do.', 'Steve Jobs', 1);  
 
 # 🚀 **Getting started**
