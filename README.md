@@ -108,8 +108,50 @@ Frontend Deployment: Install Nginx, move your build folder to /var/www/html, and
 
 sudo apt install -y nginx  
 systemctl start nginx  
-systemctl enable nginx  
+systemctl enable nginx   
 
+npm run build  
+sudo mkdir /var/www/react/  
+sudo cp -r build/* /var/www/react/  
+
+configure nginx conf file:  
+
+<pre style="color: orange;">
+server {
+    listen 80;
+    server_name 54.167.50.249;  # Replace with your server IP or domain
+
+    root /var/www/react;            # React build files
+    index index.html;
+
+    # Serve React SPA routes
+    location / {
+        try_files $uri /index.html;
+    }
+
+    # Proxy all API requests to Spring Boot backend
+    location /api/ {
+        proxy_pass http://127.0.0.1:8080/api/;
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection 'upgrade';
+        proxy_set_header Host $host;
+        proxy_cache_bypass $http_upgrade;
+
+        # Optional: increase timeout for long-running requests
+        proxy_read_timeout 300;
+        proxy_connect_timeout 300;
+    }
+
+    # Optional: handle 404 for React SPA
+    error_page 404 /index.html;
+}
+</pre>
+  
+  
+sudo nginx -t  
+systemctl restart nginx   
+systemctl enable nginx   
 ### Troubleshoot commands:   
 sudo ufw allow 8080  
 sudo netstat -tulpn | grep 8080  
