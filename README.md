@@ -70,10 +70,34 @@ mvn spring-boot:run
 
 Verify user can be created :  
 
+✅ Register a user
 curl -X POST http://localhost:8080/api/auth/register \
   -H "Content-Type: application/json" \
   -d '{"username":"testuser","password":"123","name":"Test User"}'
-  
+
+🧪 Login Test
+curl -X POST http://localhost:8080/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"username":"testuser","password":"123"}'
+
+Add Quote for user ID = 1
+curl http://localhost:8080/api/quotes/1
+
+curl -X POST http://localhost:8080/api/quotes/1 \
+  -H "Content-Type: application/json" \
+  -d '{"text":"Stay hungry, stay foolish","author":"Steve Jobs"}'
+
+
+🚀 Summary
+Action	URL
+Register user	POST /api/auth/register
+Login user	    POST /api/auth/login
+Get quotes	    GET /api/quotes/{userId}
+Add quote	    POST /api/quotes/{userId}
+Update quote	PUT /api/quotes/{id}
+Delete quote	DELETE /api/quotes/{id}
+
+
 Navigate to your frontend directory and run:  
 npm install  
 npm start  
